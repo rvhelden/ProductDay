@@ -1,1 +1,1 @@
-﻿
+﻿var sample = new Sample();

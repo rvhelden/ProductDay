@@ -11,11 +11,9 @@ public class SampleNew
 [AttributeUsage(AttributeTargets.Method)]
 file class OneOfAttribute<T1> : Attribute
 {
-
 }
 
 [AttributeUsage(AttributeTargets.Method)]
 file class OneOfAttribute<T1, T2> : Attribute
 {
-
 }

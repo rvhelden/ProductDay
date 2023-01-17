@@ -11,10 +11,10 @@ public class SampleOld
 [AttributeUsage(AttributeTargets.Method)]
 file class OneOfAttribute : Attribute
 {
-    public Type[] Types { get; set; }
 
     public OneOfAttribute(params Type[] types)
     {
         this.Types = types;
     }
+    public Type[] Types { get; }
 }

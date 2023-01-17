@@ -2,7 +2,7 @@
 Demo.Method(ref value);
 
 
-static class Demo
+internal static class Demo
 {    
     public static void Method(ref Values value)
     {

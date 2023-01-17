@@ -1,19 +1,15 @@
-﻿var sample = new Sample();
+﻿var value = new IntValue(5);
 
-internal struct Sample
+internal struct IntValue
 {
-    public int Number1;
-    public int Number2;
+    public int Number;
 
-    public Sample()
+    public IntValue()
     {
-        this.Number1 = 0;
-        this.Number2 = 0;
     }
 
-    public Sample(int number1, int number2)
+    public IntValue(int number)
     {
-        this.Number1 = number1;
-        this.Number2 = number2;
+        this.Number = number;
     }
 }

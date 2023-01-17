@@ -2,9 +2,9 @@
 
 public static class QuickSortClassic
 {
-    public static IEnumerable<T> QuickSort<T>(IEnumerable<T> values) where T : IComparable
+    public static IList<T> QuickSort<T>(IList<T> values) where T : IComparable
     {
-        if (values == null || !values.Any())
+        if (!values.Any())
         {
             return new List<T>();
         }
@@ -14,12 +14,13 @@ public static class QuickSortClassic
         var rest = values.Skip(1);
 
         //get the smaller and larger elements
-        var smallerElements = QuickSort(rest.Where(i => i.CompareTo(firstElement) < 0));
-        var largerElements = QuickSort(rest.Where(i => i.CompareTo(firstElement) >= 0));
+        var smallerElements = QuickSort(rest.Where(i => i.CompareTo(firstElement) < 0).ToList());
+        var largerElements = QuickSort(rest.Where(i => i.CompareTo(firstElement) >= 0).ToList());
 
         //return the result
         return smallerElements
             .Concat(new List<T> { firstElement })
-            .Concat(largerElements);
+            .Concat(largerElements)
+            .ToList();
     }
 }

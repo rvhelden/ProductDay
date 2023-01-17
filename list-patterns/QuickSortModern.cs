@@ -11,10 +11,10 @@ public static class QuickSortModern
         {
             case []:
                 return Array.Empty<T>();
-            case [var first, .. var other]:
-                var smaller = QuickSort(other.Where(x => x.CompareTo(first) < 0).ToArray());
-                var larger = QuickSort(other.Where(x => x.CompareTo(first) >= 0).ToArray());
-                return smaller.Append(first).Concat(larger).ToArray();
+            case [var pivot, .. var other]:
+                var smaller = QuickSort(other.Where(x => x.CompareTo(pivot) < 0).ToArray());
+                var larger = QuickSort(other.Where(x => x.CompareTo(pivot) >= 0).ToArray());
+                return smaller.Append(pivot).Concat(larger).ToArray();
         }
 
         throw new UnreachableException();

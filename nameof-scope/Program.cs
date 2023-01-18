@@ -1,37 +1,10 @@
 ﻿Console.WriteLine();
 
+[My(nameof(arg1))]
+void Method(int arg1)
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 internal class MyAttribute : Attribute
 {

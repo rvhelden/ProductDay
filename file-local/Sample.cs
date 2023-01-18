@@ -1,0 +1,11 @@
+public partial class Sample
+{
+
+    private void Method()
+    {
+        var fileScopedData = new FileScopedData(2);
+    }
+    private record PrivateScopedData;
+}
+
+file record FileScopedData(int Id);

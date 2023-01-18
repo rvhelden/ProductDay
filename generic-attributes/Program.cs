@@ -1,23 +1,14 @@
-﻿using generic_attributes;
+﻿var methodInfo = typeof(SampleNew).GetMethod(nameof(SampleNew.Method));
 
-Utility.Print(typeof(Car), nameof(Car.Start));
-
-internal class Car
+Console.WriteLine(methodInfo!.Name);
+foreach (var attribute in methodInfo.GetCustomAttributes(false))
 {
-    [IgnitionMethod(typeof(Keyless), typeof(Key))]
-    public void Start()
-    {
-        
-    }
-}
+    Console.WriteLine();
 
-[AttributeUsage(AttributeTargets.Method)]
-class IgnitionMethodAttribute : Attribute
-{
-    public Type[] Types { get; }
-
-    public IgnitionMethodAttribute(params Type[] types)
+    var attributeType = attribute.GetType();
+    Console.WriteLine($"Attribute type: {attributeType.Name}");
+    foreach (var typeArgument in attributeType.GenericTypeArguments)
     {
-        this.Types = types;
+        Console.WriteLine($"Attribute type argument: {typeArgument.Name}");
     }
 }
